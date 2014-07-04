@@ -22,9 +22,9 @@ public class TaskControllerJPA {
         return new ModelAndView("addTask");
     }
     
-    @RequestMapping(method=RequestMethod.POST, value = "/tasks/persistence")
-    public ModelAndView add(Model model, @ModelAttribute("tasks") Task task) {
-        task = taskService.save(task);
-        return new ModelAndView("taskAddedWithId", "task", task);
-    }
+//    @RequestMapping(method=RequestMethod.POST, value = "/tasks/persistence")
+//    public ModelAndView add(Model model, @ModelAttribute("tasks") Task task) {
+//        task = taskService.save(task);
+//        return new ModelAndView("taskAddedWithId", "task", task);
+//    }
 }
