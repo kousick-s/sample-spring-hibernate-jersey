@@ -26,6 +26,7 @@ public class Task
     private String tName;
     private String tDesc;
     private String tCreateDate;
+    @XmlInverseReference(mappedBy="uId")
     @ManyToOne
     private Collaborator tAssignedUser;
     private String tDueDate;

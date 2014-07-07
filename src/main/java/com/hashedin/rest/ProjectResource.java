@@ -73,10 +73,10 @@ public class ProjectResource {
 	    }
 	 @GET
 	    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	    public List<Task> list()
+	    public List<Project> getAllProjects()
 	    {
 	        // Handles GET on /tasks. Lists all the tasks we have in our system.
-	        return taskService.find();
+	        return projectService.getAllProjects();
 	    }
 
 }

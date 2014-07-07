@@ -18,8 +18,8 @@ import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 @XmlRootElement
 @Entity
 @Table(name = "projects")
-// @NamedQueries({ @NamedQuery(name = "Task.findAll", query =
-// "SELECT t FROM Task t") })
+@NamedQueries({ @NamedQuery(name = "Project.findAll", query =
+"SELECT p FROM Project p") })
 public class Project {
 
 	@Id

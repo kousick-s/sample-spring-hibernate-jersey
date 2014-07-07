@@ -1,11 +1,15 @@
 package com.hashedin.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import com.hashedin.model.Project;
+import com.hashedin.model.Task;
 
 @Repository("projectRepository")
 public class ProjectRepositoryImpl implements ProjectRepository{
@@ -20,5 +24,13 @@ public class ProjectRepositoryImpl implements ProjectRepository{
         em.flush();
         return project;
     }
+	
+	 @Override
+	    public List<Project> getAllProjects() {
+	        // Returns all the tasks in our system.
+	        TypedQuery<Project> query = em.createNamedQuery("Project.findAll", Project.class);
+	        List<Project> results = query.getResultList();
+	        return results;
+	    }
 
 }
