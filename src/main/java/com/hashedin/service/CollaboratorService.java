@@ -9,4 +9,5 @@ import com.hashedin.model.*;
 public interface CollaboratorService {
 	@Transactional
 	Collaborator addCollaborator(Collaborator collaborator, Long tId);
+	List<Task> getAllTasksByUid(Long Uid);
 }

@@ -21,17 +21,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hashedin.model.*;
-
 import com.hashedin.service.CollaboratorService;
 
 
 @Component
-@Path("/tasks")
+@Path("/collaborators")
 public class CollaboratorResource
 {
 
     @Autowired
     private CollaboratorService collaboratorService;
-
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Path("/{uId}")
+      public List<Task> getAllTasksByUid(@PathParam("uId") Long uId)
+      {
+          // Handles GET on /tasks. Lists all the tasks we have in our system.
+          return collaboratorService.getAllTasksByUid(uId);
+      }
 
 }

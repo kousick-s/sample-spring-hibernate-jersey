@@ -39,6 +39,10 @@ public class TaskResource
         // Handles GET on /tasks. Lists all the tasks we have in our system.
         return taskService.find();
     }
+    
+  
+    
+    
 //
 //    @GET
 //    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })

@@ -24,4 +24,10 @@ public class CollaboratorServiceImpl implements CollaboratorService
 	        return collaborator;
 	    }
 	 
+	 public List<Task> getAllTasksByUid(Long Uid)
+	    {
+	        // Returns all the tasks in our system.
+	        return collaboratorRepository.getAllTasksByUid(Uid);
+	    }
+	 
 }

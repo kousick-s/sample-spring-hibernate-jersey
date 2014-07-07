@@ -39,6 +39,10 @@ public class TaskRepositoryImpl implements TaskRepository
         List<Task> results = query.getResultList();
         return results;
     }
+    
+   
+    
+    
 //
 //    @Override
 //    public Task update(Task task, Long taskId)

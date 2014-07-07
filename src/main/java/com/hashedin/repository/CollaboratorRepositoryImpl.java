@@ -31,4 +31,8 @@ public class CollaboratorRepositoryImpl implements CollaboratorRepository
         
         return collaborator;
     }
+    public List<Task> getAllTasksByUid(Long uId){
+    	List<Task> results= em1.find(Collaborator.class, uId).getTasks();
+    	return results;
+    }
 }

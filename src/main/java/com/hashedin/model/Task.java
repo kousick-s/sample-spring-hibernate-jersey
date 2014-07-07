@@ -16,7 +16,9 @@ import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 @XmlRootElement
 @Entity
 @Table(name = "tasks")
-@NamedQueries({ @NamedQuery(name = "Task.findAll", query = "SELECT t FROM Task t") })
+@NamedQueries({ @NamedQuery(name = "Task.findAll", query = "SELECT t FROM Task t"),
+				@NamedQuery(name = "Task.findByUid", query = "SELECT t FROM Task t where t.tAssignedUser=:uId")})
+
 public class Task
 {
 

@@ -11,6 +11,6 @@ public interface TaskService {
 //  Task createTask(Task task);
 //  Task getAllTasksByStatus(String tStatus);
 	Task addTask(Task task, Long pId);
-	
+
 	
 }
