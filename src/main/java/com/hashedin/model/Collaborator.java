@@ -16,6 +16,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @Entity
 @Table(name = "collaborators")
+@NamedQueries({ @NamedQuery(name = "Collaborator.findAll", query =
+"SELECT c FROM Collaborator c") })
 public class Collaborator {
 
 	@Id

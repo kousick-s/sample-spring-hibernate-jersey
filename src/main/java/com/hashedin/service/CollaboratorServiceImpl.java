@@ -29,5 +29,8 @@ public class CollaboratorServiceImpl implements CollaboratorService
 	        // Returns all the tasks in our system.
 	        return collaboratorRepository.getAllTasksByUid(Uid);
 	    }
+	 public List<Collaborator>getAllCollaborators(){
+		 return collaboratorRepository.getAllCollaborators();
+	 }
 	 
 }

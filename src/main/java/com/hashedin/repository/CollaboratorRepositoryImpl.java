@@ -35,4 +35,11 @@ public class CollaboratorRepositoryImpl implements CollaboratorRepository
     	List<Task> results= em1.find(Collaborator.class, uId).getTasks();
     	return results;
     }
+    
+    public List<Collaborator>getAllCollaborators(){
+    	 TypedQuery<Collaborator> query = em1.createNamedQuery("Collaborator.findAll", Collaborator.class);
+	        List<Collaborator> results = query.getResultList();
+	        return results;
+    }
+    
 }

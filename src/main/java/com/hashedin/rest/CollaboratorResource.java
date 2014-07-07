@@ -39,5 +39,13 @@ public class CollaboratorResource
           // Handles GET on /tasks. Lists all the tasks we have in our system.
           return collaboratorService.getAllTasksByUid(uId);
       }
+    
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public List<Collaborator> getAllProjects()
+    {
+        // Handles GET on /tasks. Lists all the tasks we have in our system.
+        return collaboratorService.getAllCollaborators();
+    }
 
 }
