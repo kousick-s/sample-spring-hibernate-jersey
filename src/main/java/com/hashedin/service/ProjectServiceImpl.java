@@ -30,5 +30,10 @@ public class ProjectServiceImpl implements ProjectService{
         // Returns all the tasks in our system.
         return projectRepository.getAllProjects();
     }
+	 public List<Task> getAllTasksByPid(Long Pid)
+	    {
+	        // Returns all the tasks in our system.
+	        return projectRepository.getAllTasksByPid(Pid);
+	    }
 
 }

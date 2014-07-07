@@ -78,5 +78,19 @@ public class ProjectResource {
 	        // Handles GET on /tasks. Lists all the tasks we have in our system.
 	        return projectService.getAllProjects();
 	    }
+	 
+	 @GET
+	    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	    @Path("tasks/{pId}")
+	      public List<Task> getAllTasksByPid(@PathParam("pId") Long pId)
+	      {
+	          // Handles GET on /tasks. Lists all the tasks we have in our system.
+	          return projectService.getAllTasksByPid(pId);
+	      }
+	 
+	 
+	 
+	 
+	 
 
 }

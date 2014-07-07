@@ -42,7 +42,7 @@ public class CollaboratorResource
     
     @GET
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public List<Collaborator> getAllProjects()
+    public List<Collaborator> getAllCollaborators()
     {
         // Handles GET on /tasks. Lists all the tasks we have in our system.
         return collaboratorService.getAllCollaborators();
