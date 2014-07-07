@@ -34,12 +34,12 @@ public class TaskServiceImpl implements TaskService
     }
 //
 //
-//    @Override
-//    public List<Task> findAll()
-//    {
-//        // Returns all the tasks in our system.
-//        return taskRepository.findAll();
-//    }
+    @Override
+    public List<Task> find()
+    {
+        // Returns all the tasks in our system.
+        return taskRepository.find();
+    }
 //
 //
 //    @Override

@@ -32,13 +32,13 @@ public class TaskRepositoryImpl implements TaskRepository
         return task;
     }
 
-//    @Override
-//    public List<Task> findAll() {
-//        // Returns all the tasks in our system.
-//        TypedQuery<Task> query = em.createNamedQuery("Task.findAll", Task.class);
-//        List<Task> results = query.getResultList();
-//        return results;
-//    }
+    @Override
+    public List<Task> find() {
+        // Returns all the tasks in our system.
+        TypedQuery<Task> query = em.createNamedQuery("Task.findAll", Task.class);
+        List<Task> results = query.getResultList();
+        return results;
+    }
 //
 //    @Override
 //    public Task update(Task task, Long taskId)

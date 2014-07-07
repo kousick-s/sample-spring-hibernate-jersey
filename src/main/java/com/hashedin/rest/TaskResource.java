@@ -32,13 +32,13 @@ public class TaskResource
     @Autowired
     private TaskService taskService;
 
-//    @GET
-//    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-//    public List<Task> list()
-//    {
-//        // Handles GET on /tasks. Lists all the tasks we have in our system.
-//        return taskService.findAll();
-//    }
+    @GET
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public List<Task> list()
+    {
+        // Handles GET on /tasks. Lists all the tasks we have in our system.
+        return taskService.find();
+    }
 //
 //    @GET
 //    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })

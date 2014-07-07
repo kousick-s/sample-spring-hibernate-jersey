@@ -6,8 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 
 
 @XmlRootElement
@@ -27,6 +30,7 @@ public class Task
     private Collaborator tAssignedUser;
     private String tDueDate;
     private String tStatus;
+    @XmlInverseReference(mappedBy="pId")
     @ManyToOne
     private Project pId;
 	public Long gettId() {

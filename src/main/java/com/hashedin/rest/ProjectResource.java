@@ -20,10 +20,10 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.hashedin.model.Collaborator;
 import com.hashedin.model.Project;
 import com.hashedin.model.Task;
-import com.hashedin.service.ProjectService;
-import com.hashedin.service.TaskService;
+import com.hashedin.service.*;
 
 @Component
 @Path("/projects")
@@ -33,6 +33,9 @@ public class ProjectResource {
 	
 	@Autowired
 	private TaskService taskService;
+	
+	@Autowired
+	private CollaboratorService collaboratorService;
 	
 	 @POST
 	    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -55,6 +58,25 @@ public class ProjectResource {
 	        taskService.addTask(task,pId);
 	        response.setStatus(Response.Status.CREATED.getStatusCode());
 	        return Response.created(new URI("/tasks/" + task.gettId())).build();
+	    }
+	 
+	 @POST
+	    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	    @Path("/{tId}/collaborators")
+	    public Response addCollaborator(Collaborator collaborator, @PathParam("tId") Long tId,@Context final HttpServletResponse response) throws URISyntaxException
+	    {
+	        // Handles POST on /tasks. Creates a new task and adds it into an repository.
+	        collaboratorService.addCollaborator(collaborator,tId);
+	        response.setStatus(Response.Status.CREATED.getStatusCode());
+	        return Response.created(new URI("/collaborators/" + collaborator.getuId())).build();
+	    }
+	 @GET
+	    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	    public List<Task> list()
+	    {
+	        // Handles GET on /tasks. Lists all the tasks we have in our system.
+	        return taskService.find();
 	    }
 
 }

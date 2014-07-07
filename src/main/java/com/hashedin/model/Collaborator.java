@@ -13,21 +13,35 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
+@Table(name = "collaborators")
 public class Collaborator {
 
 	@Id
 	@GeneratedValue
 	
 	private Long uId;
-	private String tName;
-	private String uDesig;
-	private String uImgUrl;
+	private String uName;
 	@OneToMany(fetch=FetchType.EAGER,mappedBy="tAssignedUser")
 	private List<Task> tasks = new ArrayList<Task>();
 	
-	public String gettName() {
-		return tName;
+	
+	private String uDesig;
+	private String uImgUrl;
+	
+	//private List<Task> tasks = new ArrayList<Task>();
+	
+	public String getuName() {
+		return uName;
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
 
 	public String getuDesig() {
@@ -42,8 +56,8 @@ public class Collaborator {
 		return uImgUrl;
 	}
 
-	public void settName(String tName) {
-		this.tName = tName;
+	public void setuName(String tName) {
+		this.uName = tName;
 	}
 
 	public void setuDesig(String uDesig) {

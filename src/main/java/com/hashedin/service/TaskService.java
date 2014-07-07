@@ -6,8 +6,8 @@ import com.hashedin.model.Task;
 
 public interface TaskService {
 
-//  Task find(Long taskId);
-//  List<Task> getAllTasks();
+ //Task find();
+  List<Task> find();
 //  Task createTask(Task task);
 //  Task getAllTasksByStatus(String tStatus);
 	Task addTask(Task task, Long pId);
